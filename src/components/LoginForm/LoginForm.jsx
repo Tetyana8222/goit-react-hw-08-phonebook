@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import authOperations from 'redux/auth/auth-operations';
 import { Form, TextFiled, Label, Btn } from './LoginForm.styled';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -20,6 +23,8 @@ const LoginForm = () => {
 
   const onSubmitForm = event => {
     event.preventDefault();
+    dispatch(authOperations.logIn({ email, password }));
+
     setEmail('');
     setPassword('');
   };

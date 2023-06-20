@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form, TextFiled, Label, Btn } from './RegisterForm.styled';
+import authOperations from 'redux/auth/auth-operations';
 
 const RegisterForm = () => {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,20 +24,10 @@ const RegisterForm = () => {
         return;
     }
   };
-  // const handleChangeInput = event => {
-  //   switch (event.currentTarget.name) {
-  //     case 'email':
-  //       setEmail(event.currentTarget.value);
-  //       break;
-  //     case 'password':
-  //       setPassword(event.currentTarget.value);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
+
   const onSubmitForm = event => {
     event.preventDefault();
+    dispatch(authOperations.register({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');

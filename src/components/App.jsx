@@ -7,7 +7,6 @@ import LoginView from 'pages/LoginView';
 import ContactsView from 'pages/ContactsView';
 
 export const App = () => {
-  console.log('object');
   return (
     <>
       <Routes>
