@@ -1,9 +1,11 @@
-import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const HomeView = () => (
-  <div>
-    <h1>Welcome to your phonebook</h1>
-  </div>
+const Navigation = () => (
+  <nav>
+    <NavLink to="/">Home</NavLink>
+
+    <NavLink to="/contacts">Contacts</NavLink>
+  </nav>
 );
 
-export default HomeView;
+export default Navigation;

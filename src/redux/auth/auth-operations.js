@@ -15,8 +15,8 @@ createAsyncThunk('auth/register', async credentials => {
 
 const operations = {
   // register,
-  // logOut,
-  // logIn,
-  // fetchCurrentUser,
+  // // logOut,
+  // // logIn,
+  // // fetchCurrentUser,
 };
 export default operations;

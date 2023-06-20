@@ -7,7 +7,7 @@ const InitialState = {
   isLoggedIn: false,
 };
 
-const authSlece = createSlice({
+const authSlice = createSlice({
   name: 'auth',
   InitialState,
   extraReducers: {
