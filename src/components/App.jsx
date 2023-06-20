@@ -1,19 +1,20 @@
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { ContactList } from './ContactList/ContactList';
+import { Routes, Route } from 'react-router-dom';
+import AppBar from './AppBar/AppBar';
+import HomeView from '../pages/HomeView';
 import { Container } from './App.styled';
 
-export function App() {
+export const App = () => {
+  console.log('object');
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </Container>
+    <>
+      <Container>
+        {/* <AppBar /> */}
+        <Routes>
+          {/* <Route path="/"> */}
+          <Route path="/" element={<HomeView />} />
+          {/* </Route> */}
+        </Routes>
+      </Container>
+    </>
   );
-}
-
-export default App;
+};
