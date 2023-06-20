@@ -9,12 +9,12 @@ createAsyncThunk('auth/register', async credentials => {
     const { data } = await axios.post('/users/signup', credentials);
     return data;
   } catch (error) {
-    error.message;
+    // error.message;
   }
 });
 
 const operations = {
-  register,
+  // register,
   // logOut,
   // logIn,
   // fetchCurrentUser,
