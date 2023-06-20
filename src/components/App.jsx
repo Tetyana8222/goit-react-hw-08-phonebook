@@ -5,7 +5,6 @@ import HomeView from '../pages/HomeView';
 import RegisterView from 'pages/RegisterView';
 import LoginView from 'pages/LoginView';
 import ContactsView from 'pages/ContactsView';
-import { Container } from './App.styled';
 
 export const App = () => {
   console.log('object');
