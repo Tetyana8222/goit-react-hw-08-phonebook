@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import AppBar from './AppBar/AppBar';
+// import AppBar from './AppBar/AppBar';
 import HomeView from '../pages/HomeView';
 import { Container } from './App.styled';
 
