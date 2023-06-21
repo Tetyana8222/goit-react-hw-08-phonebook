@@ -1,23 +1,16 @@
-import {
-  StyledHeader,
-  HeaderNav,
-  HomeDiv,
-  StyledNavLink,
-} from './Header.styled';
+import { useSelector } from 'react-redux';
+import authSelectors from 'redux/auth/auth-selectors';
+import { StyledHeader } from './Header.styled';
+import Navigation from 'components/Navigation/Navigation';
+import AuthNav from 'components/AuthNav/AuthNav';
+import UserMenu from 'components/UserMenu/UserMenu';
 
 const Header = () => {
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <StyledHeader>
-      <HeaderNav>
-        <HomeDiv>
-          <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-        </HomeDiv>
-        <div>
-          <StyledNavLink to="/register">Registration</StyledNavLink>
-          <StyledNavLink to="/login">Login</StyledNavLink>
-        </div>
-      </HeaderNav>
+      <Navigation />
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </StyledHeader>
   );
 };
