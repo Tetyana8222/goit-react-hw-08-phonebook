@@ -6,7 +6,7 @@ import { Form, TextFiled, Label, AddcontactBtn } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectors.selectContacts);
+  const contacts = useSelector(selectors.getContacts);
 
   const handleSubmitForm = event => {
     event.preventDefault();

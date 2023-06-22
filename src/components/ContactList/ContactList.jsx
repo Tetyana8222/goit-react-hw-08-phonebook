@@ -7,9 +7,9 @@ import * as selectors from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const filteredContacts = useSelector(selectors.selectFilteredContacts);
-  const error = useSelector(selectors.selectError);
-  const isLoading = useSelector(selectors.selectIsLoading);
+  const filteredContacts = useSelector(selectors.getContacts);
+  const error = useSelector(selectors.getError);
+  const isLoading = useSelector(selectors.getisLoading);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
