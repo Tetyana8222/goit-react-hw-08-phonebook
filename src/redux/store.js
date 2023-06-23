@@ -22,9 +22,9 @@ import { authReducer } from './auth/auth-slice';
 // });
 
 const authPersistConfig = {
-  key: 'contacts',
+  key: 'auth',
   storage,
-  whitelist: ['contacts'],
+  whitelist: ['token'],
 };
 
 // const persistedReducer = persistReducer(authPersistConfig, rootReducer);
