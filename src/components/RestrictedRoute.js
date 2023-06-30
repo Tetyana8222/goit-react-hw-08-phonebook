@@ -10,7 +10,3 @@ const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
 };
 
 export default RestrictedRoute;
-
-{
-  /* <RestrictedRoute component={<LoginView />} redirectTo="/contacts/" />; */
-}
