@@ -22,7 +22,7 @@ const ContactsView = () => {
 
       <ContactForm />
       <Filter />
-      {isLoggedIn && <ContactList />}
+      <ContactList />
     </>
   );
 };

@@ -2,15 +2,17 @@ import { List, ContactCard, DeleteContactBtn } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts, deleteContact } from 'redux/operations';
-
+import authOperations from 'redux/auth/auth-operations';
 import * as selectors from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const filteredContacts = useSelector(selectors.getContacts);
+  const filteredContacts = useSelector(selectors.getFilteredContacts);
   const error = useSelector(selectors.getError);
   const isLoading = useSelector(selectors.getisLoading);
+
   useEffect(() => {
+    dispatch(authOperations.refreshCurrentUser());
     dispatch(fetchContacts());
   }, [dispatch]);
 
