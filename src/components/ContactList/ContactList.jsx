@@ -2,17 +2,26 @@ import { List, ContactCard, DeleteContactBtn } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts, deleteContact } from 'redux/operations';
+import { getContacts } from 'redux/selectors';
+import { getFilter } from 'redux/selectors';
 
 import * as selectors from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const filteredContacts = useSelector(selectors.getContacts);
+  // const filteredContacts = useSelector(selectors.getContacts);
   const error = useSelector(selectors.getError);
   const isLoading = useSelector(selectors.getisLoading);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+  // контакти, фільтр
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
+  // відфільтровані контакти
+  const filteredContacts = contacts.filter(item =>
+    item.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase().trim())
+  );
 
   return (
     <>
